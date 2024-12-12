@@ -30,7 +30,7 @@ As each tower has 3 sensors and 3 emitters, so if you switch sides when wiring t
 ### Ground Slider
 
 The Ground Slider is an RS232 device and can be connected directly to the PC for native use. This repo contains a python script to help verify correct wiring. See `slidertest` folder readme for more info.
-It's the best to keep the slider connected to a `COM1` port.
+It's the best to keep the slider connected to the `COM1` port.
 
 ## Pinout
 
