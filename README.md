@@ -9,7 +9,7 @@ Oh and the pinout is slightly changed from the upstream, to work with a Pro Micr
 ## Overview
 
 The Chunithm panel is made of air towers and a ground slider.
-3
+
 ### Air towers
 
 The air towers are made of 6 photo interrupters and 2 LED strips which can be interfaced with an Arduino. See `ChunithmIO` for a firmware example which turns them into a keyboard device.
