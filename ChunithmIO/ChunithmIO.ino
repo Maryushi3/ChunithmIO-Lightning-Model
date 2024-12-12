@@ -8,8 +8,10 @@ CRGB left_leds[NUM_LEDS];
 CRGB right_leds[NUM_LEDS];
 CRGB left_color = CRGB(0,0x7F,0x4F);
 CRGB right_color = CRGB(0x7F,0,0x4F);
-CRGB left_color_dead = CRGB(0,0x1F,0x0F);
+CRGB left_color_dead = CRGB(0,0x03,0x0F);
 CRGB right_color_dead = CRGB(0x1F,0,0x0F);
+int light_up_speed = 10;
+int light_down_speed = 2;
 bool leDebug = false;
 void setup() {
  Keyboard.begin();
@@ -28,7 +30,6 @@ void setup() {
 }
 
 void loop() {
-  // --- input ---
   if (digitalRead(8) == HIGH)
   {
     if (!leDebug) {Keyboard.press('a');}
@@ -46,7 +47,7 @@ void loop() {
     if (!leDebug) Keyboard.release('b');
   }
   if (digitalRead(9) == HIGH)
-  {
+   {
     if (!leDebug) Keyboard.press('c');
   }
   else
@@ -78,37 +79,36 @@ void loop() {
     if (!leDebug) Keyboard.release('f');
   }  
 
-// -- LEDs shenanigans --- 
   if (digitalRead(8) == HIGH or digitalRead(14) == HIGH){
-    left_leds[2] = left_color;
-    right_leds[2] = right_color;
+    left_leds[2] = CRGB(constrain(left_leds[2].r+light_up_speed,left_color_dead.r,left_color.r), left_color_dead.g, constrain(left_leds[2].b+light_up_speed,left_color_dead.b,left_color.b));
+    right_leds[2] = CRGB(constrain(right_leds[2].r+light_up_speed,right_color_dead.r,right_color.r), right_color_dead.g, constrain(right_leds[2].b+light_up_speed,right_color_dead.b,right_color.b));
     FastLED.show();
   }
   else{
-    left_leds[2] = left_color_dead;
-    right_leds[2] = right_color_dead;
+    left_leds[2] = CRGB(constrain(left_leds[2].r-light_down_speed,left_color_dead.r,left_color.r), left_color_dead.g, constrain(left_leds[2].b-light_down_speed,left_color_dead.b,left_color.b));
+    right_leds[2] = CRGB(constrain(right_leds[2].r-light_down_speed,right_color_dead.r,right_color.r), right_color_dead.g, constrain(right_leds[2].b-light_down_speed,right_color_dead.b,right_color.b));
     FastLED.show();
   }
 
   if (digitalRead(9) == HIGH or digitalRead(15) == HIGH){
-    left_leds[1] = left_color;
-    right_leds[1] = right_color;
+    left_leds[1] = CRGB(constrain(left_leds[1].r+light_up_speed,left_color_dead.r,left_color.r), left_color_dead.g, constrain(left_leds[1].b+light_up_speed,left_color_dead.b,left_color.b));
+    right_leds[1] = CRGB(constrain(right_leds[1].r+light_up_speed,right_color_dead.r,right_color.r), right_color_dead.g, constrain(right_leds[1].b+light_up_speed,right_color_dead.b,right_color.b));
     FastLED.show();
   }
   else{
-    left_leds[1] = left_color_dead;
-    right_leds[1] = right_color_dead;
+    left_leds[1] = CRGB(constrain(left_leds[1].r-light_down_speed,left_color_dead.r,left_color.r), left_color_dead.g, constrain(left_leds[1].b-light_down_speed,left_color_dead.b,left_color.b));
+    right_leds[1] = CRGB(constrain(right_leds[1].r-light_down_speed,right_color_dead.r,right_color.r), right_color_dead.g, constrain(right_leds[1].b-light_down_speed,right_color_dead.b,right_color.b));
     FastLED.show();
   }
 
   if (digitalRead(10) == HIGH or digitalRead(16) == HIGH){
-    left_leds[0] = left_color;
-    right_leds[0] = right_color;
+    left_leds[0] = CRGB(constrain(left_leds[0].r+light_up_speed,left_color_dead.r,left_color.r), left_color_dead.g, constrain(left_leds[0].b+light_up_speed,left_color_dead.b,left_color.b));
+    right_leds[0] = CRGB(constrain(right_leds[0].r+light_up_speed,right_color_dead.r,right_color.r), right_color_dead.g, constrain(right_leds[0].b+light_up_speed,right_color_dead.b,right_color.b));
     FastLED.show();
   }
   else{
-    left_leds[0] = left_color_dead;
-    right_leds[0] = right_color_dead;
+    left_leds[0] = CRGB(constrain(left_leds[0].r-light_down_speed,left_color_dead.r,left_color.r), left_color_dead.g, constrain(left_leds[0].b-light_down_speed,left_color_dead.b,left_color.b));
+    right_leds[0] = CRGB(constrain(right_leds[0].r-light_down_speed,right_color_dead.r,right_color.r), right_color_dead.g, constrain(right_leds[0].b-light_down_speed,right_color_dead.b,right_color.b));
     FastLED.show();
   }
 }
