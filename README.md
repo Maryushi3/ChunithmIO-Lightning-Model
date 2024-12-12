@@ -12,9 +12,9 @@ The Chunithm panel is made of air towers and a ground slider.
 3
 ### Air towers
 
-The air towers are made of 6 photo interrupters and 2 led strips which can be interfaced with an Arduino. See `ChunithmIO` for a firmware example which turns them into a keyboard device.
+The air towers are made of 6 photo interrupters and 2 LED strips which can be interfaced with an Arduino. See `ChunithmIO` for a firmware example which turns them into a keyboard device.
 
-In this example, each sensor responds 1:1 to a key, i.e. when covered, the key is pressed, and when uncovered, the key is released. Going from the bottom to the top the keys are `a`, `b`, `c`, `d`, `e`, `f`. Their keycodes are as follows
+In this example, each IR sensor responds 1:1 to a key, i.e. when covered, the key is pressed, and when uncovered, the key is released. Going from the bottom to the top the keys are `a`, `b`, `c`, `d`, `e`, `f`. Their keycodes are as follows
 
 ```
 ir1=0x41
