@@ -17,8 +17,6 @@ void setup() {
  FastLED.addLeds<WS2811, RIGHT_PIN, RGB>(right_leds, NUM_LEDS).setCorrection( TypicalLEDStrip );
  FastLED.setBrightness(64);
  delay(1000);
-//  fill_solid(right_leds, NUM_LEDS, CRGB(0x7F,0,0x23));
-//  fill_solid(left_leds, NUM_LEDS, CRGB(0,0x7F,0x7F));
  FastLED.show(); 
  pinMode(8, INPUT_PULLUP);
  pinMode(9, INPUT_PULLUP);
