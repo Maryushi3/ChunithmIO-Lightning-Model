@@ -6,6 +6,9 @@ This fork adds reactive lightning to the air towers, and in the future maybe som
 
 Oh and the pinout is slightly changed from the upstream, to work with a Pro Micro board.
 
+> [!WARNING]
+> Due to the LED code here being so simple, you **must** have a relatively recent version of the FastLED library installed, otherwise, your air tower LEDs will flicker. I'm not sure which would be the minimum required, but **3.9.4** is proven to work.
+
 ## Overview
 
 The Chunithm panel is made of air towers and a ground slider.
