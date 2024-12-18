@@ -117,8 +117,8 @@ void choosePreset(byte predef_led_mode = 255) {
       break;
     case 2:
       // sound voltex
-      left_color = CRGB::DarkMagenta;
-      right_color = CRGB::Aqua;
+      left_color = CRGB::Aqua;
+      right_color = CRGB::DarkMagenta;
       break;
     case 3:
       // paprykarz
